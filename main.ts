@@ -29,23 +29,3 @@ angoloS0 = 0
 speedM1 = 0
 wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, angoloS0)
 wuKong.stopMotor(wuKong.MotorList.M1)
-basic.forever(function () {
-    if (angoloS0 == 0) {
-        basic.showLeds(`
-            . . # . .
-            . . # . .
-            # . # . #
-            . # # # .
-            . . # . .
-            `)
-    }
-    if (angoloS0 > 360) {
-        basic.showLeds(`
-            . . # . .
-            . # # # .
-            # . # . #
-            . . # . .
-            . . # . .
-            `)
-    }
-})
