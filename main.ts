@@ -1,17 +1,22 @@
 radio.onReceivedValue(function (name, value) {
     if (name == "F") {
-        speedM1 += -10
+        speedM1 += -6
     } else if (name == "B") {
-        speedM1 += 10
-    } else if (name == "R") {
-        angoloS0 += -2
+        speedM1 += 6
     } else if (name == "L") {
-        angoloS0 += 2
+        angoloS0 += -6
+    } else if (name == "R") {
+        angoloS0 += 6
     }
-    if (angoloS0 == 210) {
+    if (angoloS0 > 210) {
         angoloS0 = 210
-    } else if (angoloS0 == 150) {
+    } else if (angoloS0 < 150) {
         angoloS0 = 150
+    }
+    if (speedM1 >= 100) {
+        speedM1 = 100
+    } else if (speedM1 <= -100) {
+        speedM1 = -100
     }
     wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, angoloS0)
     wuKong.setMotorSpeed(wuKong.MotorList.M1, speedM1)
