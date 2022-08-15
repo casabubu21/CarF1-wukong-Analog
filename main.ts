@@ -8,6 +8,7 @@ radio.onReceivedValue(function (name, value) {
     } else if (name == "R") {
         angoloS0 += 6
     } else if (name == "S") {
+        speedM1 = 0
         wuKong.stopMotor(wuKong.MotorList.M1)
     }
     if (angoloS0 > 210) {
