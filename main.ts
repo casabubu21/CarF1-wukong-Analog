@@ -10,8 +10,8 @@ radio.onReceivedValue(function (name, value) {
     } else if (name == "S") {
         speedM1 = 0
         wuKong.stopMotor(wuKong.MotorList.M1)
-    } else if (name == "BIP") {
-        bip = 1
+    } else if (name == "T") {
+        speedM1 = 100
     }
     if (angoloS0 > 210) {
         angoloS0 = 210
@@ -34,8 +34,8 @@ radio.onReceivedValue(function (name, value) {
     wuKong.setMotorSpeed(wuKong.MotorList.M1, speedM1)
     basic.pause(50)
 })
-let strip: neopixel.Strip = null
 let bip = 0
+let strip: neopixel.Strip = null
 let piopio = 0
 let speedM1 = 0
 let angoloS0 = 0
@@ -45,7 +45,6 @@ wuKong.setLightMode(wuKong.LightMode.BREATH)
 angoloS0 = 180
 speedM1 = 0
 piopio = 0
-bip = 0
 wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, angoloS0)
 wuKong.stopMotor(wuKong.MotorList.M1)
 strip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
