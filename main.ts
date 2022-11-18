@@ -4,19 +4,19 @@ radio.onReceivedValue(function (name, value) {
     } else if (name == "B") {
         speedM1 += -6
     } else if (name == "L") {
-        angoloS0 += -6
+        angoloS0 += -10
     } else if (name == "R") {
-        angoloS0 += 6
+        angoloS0 += 10
     } else if (name == "S") {
         speedM1 = 0
         wuKong.stopMotor(wuKong.MotorList.M1)
     } else if (name == "T") {
         speedM1 = 100
     }
-    if (angoloS0 > 210) {
-        angoloS0 = 210
-    } else if (angoloS0 < 150) {
-        angoloS0 = 150
+    if (angoloS0 > 260) {
+        angoloS0 = 260
+    } else if (angoloS0 < 100) {
+        angoloS0 = 100
     }
     if (speedM1 >= 100) {
         speedM1 = 100
