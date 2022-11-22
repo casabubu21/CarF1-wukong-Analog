@@ -34,7 +34,6 @@ radio.onReceivedValue(function (name, value) {
     wuKong.setMotorSpeed(wuKong.MotorList.M1, speedM1)
     basic.pause(50)
 })
-let bip = 0
 let strip: neopixel.Strip = null
 let piopio = 0
 let speedM1 = 0
@@ -49,11 +48,3 @@ wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, angoloS0)
 wuKong.stopMotor(wuKong.MotorList.M1)
 strip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 strip.showColor(neopixel.rgb(155, 10, 255))
-basic.forever(function () {
-    if (bip > 1) {
-        music.playTone(988, music.beat(BeatFraction.Whole))
-        basic.pause(350)
-        bip = 0
-    }
-    basic.pause(100)
-})
