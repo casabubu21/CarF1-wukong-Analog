@@ -3,10 +3,8 @@ radio.onReceivedValue(function (name, value) {
         speedM1 += 6
     } else if (name == "B") {
         speedM1 += -6
-    } else if (name == "L") {
-        angoloS0 += -10
-    } else if (name == "R") {
-        angoloS0 += 10
+    } else if (name == "X") {
+        angoloS0 = (value + 100) / 1.25 + 100
     } else if (name == "S") {
         speedM1 = 0
         wuKong.stopMotor(wuKong.MotorList.M1)
