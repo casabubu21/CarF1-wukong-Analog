@@ -28,18 +28,25 @@ radio.onReceivedValue(function (name, value) {
         piopio = 0
         strip.showColor(neopixel.colors(NeoPixelColors.Green))
     }
-    wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, angoloS0)
+    if (Steering < angoloS0) {
+        Steering += 6
+    } else if (Steering > angoloS0) {
+        Steering += -6
+    }
+    wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, Steering)
     wuKong.setMotorSpeed(wuKong.MotorList.M1, speedM1)
     basic.pause(50)
 })
 let strip: neopixel.Strip = null
 let piopio = 0
 let speedM1 = 0
+let Steering = 0
 let angoloS0 = 0
 let countRadio = 0
 radio.setGroup(8)
 wuKong.setLightMode(wuKong.LightMode.BREATH)
 angoloS0 = 180
+Steering = angoloS0
 speedM1 = 0
 piopio = 0
 wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, angoloS0)
